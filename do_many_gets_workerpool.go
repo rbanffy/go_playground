@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"os"
 	"runtime"
-"sync"
+	"sync"
 )
 
 func deliver(payload string) (delivered string, err error) {
@@ -45,7 +45,7 @@ func main() {
 
 	for w := 1; w <= 200; w++ {
 		wg.Add(1)
-		go func () {
+		go func() {
 			worker(w, jobs, results)
 			wg.Done()
 		}()
